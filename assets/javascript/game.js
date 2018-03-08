@@ -18,12 +18,14 @@ var wins = 0;
 var remainingGuesses = 12;
 var wordToGuess = wordOptions[Math.floor(Math.random()*wordOptions.length)];
 
-document.onkeypress = function (event) {
+document.onkeypress = function game(event) {
     playerGuess = event.key;
 
     if (playerGuess == "Enter") {
         wordToGuess = wordOptions[Math.floor(Math.random()*wordOptions.length)];
         wrongGuesses = [];
+        remainingGuesses = 12;
+        print();
     };
 
     if (wordToGuess.length == 5) {
@@ -65,9 +67,13 @@ document.onkeypress = function (event) {
         wrongGuesses.push(playerGuess)
         document.getElementById("letters-guessed").innerHTML = " " + wrongGuesses;
         console.log(wrongGuesses);
-        remainingGuesses = remainingGuesses--;
+        remainingGuesses = --remainingGuesses;
         print();
         };
+
+        if (remainingGuesses == 0) {
+            alert("Game Over");
+        }
     };
 
 };
@@ -75,6 +81,7 @@ document.onkeypress = function (event) {
 function print() {
 document.getElementById("spaces").innerHTML = spaces;
 document.getElementById("remaining-guesses").innerHTML = remainingGuesses;
+document.getElementById("letters-guessed").innerHTML = wrongGuesses;
 console.log(spaces);
 console.log(wrongGuesses.length);
 console.log(wins);
