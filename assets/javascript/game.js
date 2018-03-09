@@ -25,6 +25,7 @@ document.onkeypress = function game(event) {
         wordToGuess = wordOptions[Math.floor(Math.random()*wordOptions.length)];
         wrongGuesses = [];
         remainingGuesses = 12;
+        spaces = spaces5;
         print();
     };
 
