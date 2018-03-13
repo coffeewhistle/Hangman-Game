@@ -72,11 +72,23 @@ document.onkeypress = function game(event) {
         print();
         };
 
-        if (remainingGuesses == 0) {
+        if (remainingGuesses < 0) {
             alert("Game Over");
-        }
-    };
+            wordToGuess = wordOptions[Math.floor(Math.random()*wordOptions.length)];
+            wrongGuesses = [];
+            remainingGuesses = 12;
+            print();
+        };
 
+        if (spaces.every.toLowerCase() != spaces.every.toUpperCase()) {
+            alert("You win!")
+            wins++
+            wordToGuess = wordOptions[Math.floor(Math.random()*wordOptions.length)];
+            wrongGuesses = [];
+            remainingGuesses = 12;
+            print();
+        };
+    };
 };
 
 function print() {
