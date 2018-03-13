@@ -1,11 +1,11 @@
 var wordOptions = [
     "conker",
-    "kazooie",
+    "banjo",
     "boris",
     "wario",
-    "waluigi",
+    "toad",
     "pikachu",
-    "katarn",
+    "jedis",
     "falcon",
     "epona"
 ];
@@ -17,6 +17,8 @@ var wrongGuesses = [];
 var wins = 0;
 var remainingGuesses = 12;
 var wordToGuess = wordOptions[Math.floor(Math.random()*wordOptions.length)];
+
+
 
 document.onkeypress = function game(event) {
     playerGuess = event.key;
@@ -72,7 +74,7 @@ document.onkeypress = function game(event) {
         print();
         };
 
-        if (remainingGuesses < 0) {
+        if (remainingGuesses = 0) {
             alert("Game Over");
             wordToGuess = wordOptions[Math.floor(Math.random()*wordOptions.length)];
             wrongGuesses = [];
@@ -89,16 +91,12 @@ document.onkeypress = function game(event) {
             print();
         };
     };
+
+    function print() {
+        document.getElementById("spaces") = spaces;
+        document.getElementById("remaining-guesses").innerHTML = remainingGuesses;
+        document.getElementById("letters-guessed").innerHTML = wrongGuesses;
+        };
 };
 
-function print() {
-document.getElementById("spaces").innerHTML = spaces;
-document.getElementById("remaining-guesses").innerHTML = remainingGuesses;
-document.getElementById("letters-guessed").innerHTML = wrongGuesses;
-console.log(spaces);
-console.log(wrongGuesses.length);
-console.log(wins);
-console.log(remainingGuesses);
-console.log(wordToGuess);
-}
 
