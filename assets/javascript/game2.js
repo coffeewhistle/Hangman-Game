@@ -26,6 +26,7 @@ window.onload = function() {
         word = wordOptions[Math.floor(Math.random()*wordOptions.length)];
         word = word.replace(/\s/g, "_");
         console.log(word);
+        document.getElementById("game-image").setAttribute("src", "assets/images/" + word + ".jpg");
         
         // Provide HTML for the text in the game space
         gameHTML = 
@@ -69,5 +70,3 @@ window.onload = function() {
         };
     };
 };
-
-
